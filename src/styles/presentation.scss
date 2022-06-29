@@ -1,0 +1,37 @@
+@import "./constants.scss";
+
+.container-fist-presentation {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50vh;
+    padding: $measure-margin;
+
+    figure img {
+        width: 128px;
+        border-radius: 50%;
+    }
+
+    h1 {
+        color: $primary-color;
+        font-weight: normal;
+
+        b {
+            color: $secondary-color;
+        }
+    }
+
+    h2 {
+        color: $dark-color;
+        text-transform: uppercase;
+        font-weight: normal;
+        margin-top: 10px;
+    }
+
+    p {
+        color: $dark-color;
+        margin: $measure-margin auto;
+        max-width: 60%;
+    }
+}

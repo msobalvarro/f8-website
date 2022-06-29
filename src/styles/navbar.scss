@@ -1,0 +1,17 @@
+@import "./constants.scss";
+
+nav.nav-bar {
+  padding: $measure-margin;
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+
+  ul {
+    display: flex;
+    
+    li {
+      margin-right: $measure-margin;
+      list-style: none;
+    }
+  } 
+}
