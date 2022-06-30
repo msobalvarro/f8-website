@@ -1,7 +1,16 @@
 @import "constants.scss";
 
+@font-face {
+  font-family: Monserrat;
+  src: url("../assets/fonts/Montserrat-Regular.ttf"),
+        url("../assets/fonts/Montserrat-Medium.ttf"),
+        url("../assets/fonts/Montserrat-Bold.ttf");
+}
+
 * {
   box-sizing: border-box;
+  font-family: Monserrat;
+  font-weight: normal;
   margin: 0;
   padding: 0;
 }
@@ -24,6 +33,7 @@ code {
   cursor: pointer;
   border: none;
   font-size: 1em;
+  font-weight: bold;
   text-transform: uppercase;
   padding: 10px;
   border-radius: 25px;

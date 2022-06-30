@@ -5,7 +5,7 @@ const FeedbackComponent = () => {
     <div className="container-feedback">
       <aside></aside>
       
-      <h2>This is feedback</h2>
+      {/* <h2>This is feedback</h2> */}
     </div>
   )
 }

@@ -6,6 +6,7 @@ import NavbarComponent from "./components/navbar.component"
 import FooterComponent from "./components/footer.component"
 import FeedbackComponent from "./components/feedback.component"
 import Presentation from "./pages/presentation-head.page"
+import BrandsComponent from "./components/brans.component"
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         <Presentation />
 
         <FeedbackComponent />
+
+        <BrandsComponent />
 
       </div>
 

@@ -1,5 +1,5 @@
 import "../styles/footer.scss"
-import logo from "../assets/f8tech-logo.png"
+import logo from "../assets/images/logo.png"
 
 const FooterComponent = () => (
   <footer className="footer-container">
@@ -23,7 +23,7 @@ const FooterComponent = () => (
 
     <div className="container-brand">
       <figure>
-        <img src={logo} className="brand-logo" />
+        <img src={logo} alt="logo" className="brand-logo" />
       </figure>
 
 

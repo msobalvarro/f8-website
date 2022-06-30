@@ -1,0 +1,19 @@
+@import "./constants.scss";
+
+.container-brands {
+  margin: $measure-margin 0;
+  border-bottom: 5px solid $dark-color;
+  padding-bottom: $measure-margin;
+
+  h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin: $measure-margin 0;
+  }
+  
+  img {
+    max-height: 128px;
+    margin: 0 $measure-margin;
+  }
+}
