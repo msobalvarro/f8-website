@@ -10,7 +10,7 @@
     // justify-content: "center";
     height: 100%;
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -22,8 +22,8 @@
 }
 
 /* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 600px) {
-  body {
-    background-color: olive;
-  }
-}
+// @media screen and (max-width: 600px) {
+//   body {
+//     background-color: olive;
+//   }
+// }

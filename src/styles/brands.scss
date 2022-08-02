@@ -1,7 +1,7 @@
 @import "./constants.scss";
 
 .container-brands {
-  margin: $measure-margin 0;
+  // margin: $measure-margin 0;
   border-bottom: 5px solid $dark-color;
   padding-bottom: $measure-margin;
 
@@ -9,11 +9,12 @@
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
-    margin: $measure-margin 0;
+    // margin: $measure-margin 0;
   }
   
   img {
-    max-height: 128px;
+    max-height: 64px;
+    width: 256px;
     margin: 0 $measure-margin;
   }
 }

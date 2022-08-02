@@ -29,20 +29,16 @@ const BrandList = [
 
 /** Componente lista de marcass */
 const BrandsComponent = () => {
-  // estado que indica si marquee 
-  const [isPlay, setContinue] = useState(true)
-
-  /** Funcion que se ejecuta cuando el usuaeri */
-  const onHover = () => setContinue(false)
-
-  /** Onleave */
-  const onBlur = () => setContinue(true)
-
   return (
     <div className="container-brands">
       <h2>Nuestras marcas</h2>
       
-      <Marquee loop={true} play={true} direction="left">
+      <Marquee
+        loop={10}
+        speed={100}
+        play={true}
+        pauseOnHover={true}
+        direction="left">
         {BrandList.map(
           (image, i) => <img key={i} src={image} alt="brand-logo" />
         )}
