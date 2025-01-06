@@ -1,4 +1,3 @@
-import { fetcher } from '@/utils/fetch'
 import { ServiceResponse } from '@/utils/interfaces'
 import { Button } from '@mui/material'
 import { IoIosArrowForward } from 'react-icons/io'
