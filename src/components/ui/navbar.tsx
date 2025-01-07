@@ -4,7 +4,7 @@ import logo from '@/assets/logo/F8_Horizontal_Logo.png'
 import clsx from 'clsx'
 import { Link, useLocation } from 'react-router'
 
-export const gradientNavbar = 'bg-gradient-to-r backdrop-blur from-sky-700 to-cyan-600/[0.4]'
+export const gradientNavbar = 'bg-gradient-to-r backdrop-blur from-sky-700 to-cyan-600/[0.15]'
 
 const clasess = 'w-full flex flex-col md:flex-row md:items-center md:justify-between py-4 px-8 sm:flex-column'
 const routes = [

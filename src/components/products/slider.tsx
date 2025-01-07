@@ -32,7 +32,7 @@ export const ProductSliderImage = ({ images }: Props) => {
       {images.map((image, index) => (
         <div key={index}>
           <img
-            className='h-96 w-full object-cover'
+            className='h-96 w-full object-cover rounded'
             src={`${SERVER_URL}/images/${image}`}
             alt='product-image' />
         </div>

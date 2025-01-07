@@ -18,7 +18,7 @@ export const ProductItem = ({ product }: Props) => {
           {product.name}
         </h5>
 
-        <p className='mb-3 font-normal text-gray-700 text-gray-400'>
+        <p className='mb-3 font-normal text-gray-400'>
           {product.description}
         </p>
 
