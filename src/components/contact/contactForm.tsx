@@ -9,6 +9,7 @@ import { useValidation } from '@/hooks/useValidation'
 import { AxiosError } from 'axios'
 import { toast } from 'react-toastify'
 import { axiosInstance } from '@/utils/fetch'
+import { useParams } from '@/hooks/useParams'
 // import { useSearchParams } from 'next/navigation'
 
 const initialState: FormContactState = {
@@ -20,9 +21,8 @@ const initialState: FormContactState = {
 }
 
 export const ContactForm = () => {
-  // const params = useSearchParams()
-  // const customMessageProduct = params.get('product')
-  const customMessageProduct = 'test'
+  const params = useParams()
+  const customMessageProduct = params?.get('product')
   const { validateNumber } = useValidation()
   const [loading, setLoading] = useState(false)
   const [phoneCode, setPhoneCode] = useState<string>('+505')
@@ -53,7 +53,7 @@ export const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={submit} className='flex flex-col gap-4 rounded'>
+    <form onSubmit={submit} className='flex flex-col gap-4 rounded-xl shadow-xl'>
       <div className='flex md:flex-row flex-col gap-4'>
         <label className='flex-1'>
           <span className='text-sm'>Nombre Completo *</span>

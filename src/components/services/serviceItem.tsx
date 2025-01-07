@@ -8,7 +8,7 @@ interface Props {
 
 export const ServiceItem = ({ service }: Props) => {
   return (
-    <div className='flex-col flex rounded-xl hover:shadow-xl items-center gap-10 flex-1 p-12 relative w-full overflow-hidden'>
+    <div className='fade-in flex-col flex rounded-xl hover:shadow-xl items-center gap-10 flex-1 p-12 relative w-full overflow-hidden'>
 
       <div className='absolute inset-0 bg-cover scale-110 transition bg-center blur-lg z-0'
         style={{

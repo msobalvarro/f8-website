@@ -2,7 +2,7 @@
 
 import logo from '@/assets/logo/F8_Horizontal_Logo.png'
 import clsx from 'clsx'
-import { Link } from 'react-router'
+import { Link, useLocation } from 'react-router'
 
 export const gradientNavbar = 'bg-gradient-to-r from-sky-700 to-cyan-600'
 
@@ -15,11 +15,11 @@ const routes = [
 ]
 
 export const NavbarUi = () => {
-  const pathname = window.location.pathname
+  const { pathname } = useLocation()
 
   return (
     <nav className={`${clasess} ${gradientNavbar}`}>
-      <figure className='hidden md:visible'>
+      <figure className='hidden md:flex'>
         <Link to='/'>
           <img
             alt='logo'

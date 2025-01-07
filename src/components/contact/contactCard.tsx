@@ -19,7 +19,7 @@ export const ContactCard = ({ data }: Props) => {
         </span>
 
         <p className='text-xl'>Escribenos</p>
-        <p className='text-sky-200'>{data?.find(e => e.key === 'emailContact')?.value}</p>
+        <p className='text-sky-200 text-center'>{data?.find(e => e.key === 'emailContact')?.value}</p>
       </a>
 
 
@@ -29,7 +29,7 @@ export const ContactCard = ({ data }: Props) => {
         </span>
 
         <p className='text-xl'>Llámanos</p>
-        <p className='text-sky-200'>{data?.find(e => e.key === 'phoneContact')?.value}</p>
+        <p className='text-sky-200 text-center'>{data?.find(e => e.key === 'phoneContact')?.value}</p>
       </a>
 
 
@@ -39,7 +39,7 @@ export const ContactCard = ({ data }: Props) => {
         </span>
 
         <p className='text-xl'>WhatsApp</p>
-        <p className='text-sky-200'>{data?.find(e => e.key === 'whatsapp')?.value}</p>
+        <p className='text-sky-200 text-center'>{data?.find(e => e.key === 'whatsapp')?.value}</p>
       </a>
     </div>
   )
