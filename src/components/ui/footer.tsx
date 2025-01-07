@@ -6,7 +6,7 @@ import { Link } from 'react-router'
 
 export const Footer = () => {
   return (
-    <footer className='flex flex-col backdrop-blur gap-10 md:flex-row justify-between items-center text-white p-12 w-full'>
+    <footer className='flex flex-col backdrop-blur bg-gray-800/50 gap-10 md:flex-row justify-between items-center text-white p-12 w-full'>
       <figure className='bg-white p-6 rounded-full w-32 h-32 flex items-center justify-center'>
         <img
           src={logo}
