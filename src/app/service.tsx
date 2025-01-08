@@ -14,7 +14,7 @@ export default function Services() {
     <UiLayout>
       <UiTitle
         title='Cotiza nuestros servicios'
-        description='Hecha un vistazo a todos nuestros servicios, nos ajustamos a tus necesidades'
+        description='Explora la amplia gama de servicios que ofrecemos, diseñados para adaptarse a tus necesidades específicas y superar tus expectativas. Ya sea que busques soluciones personalizadas, atención rápida o resultados de alta calidad, estamos aquí para brindarte el apoyo que necesitas. Nuestro compromiso es ofrecerte un servicio excepcional, respaldado por experiencia, profesionalismo y dedicación en cada detalle.'
       />
 
       {isLoading && <ProductsSkeletons />}

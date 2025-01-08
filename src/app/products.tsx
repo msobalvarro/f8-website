@@ -14,7 +14,7 @@ export default function Products() {
     <UiLayout>
       <UiTitle
         title='Nuestros Productos'
-        description='Somos importadores de marcas oficiales, nuestra calidad en nuestro productos nos define como empresa'
+        description='Somos importadores de marcas oficiales reconocidas a nivel internacional, comprometidos con ofrecer productos de la más alta calidad. Nuestra dedicación al control de calidad y al servicio al cliente nos define como una empresa confiable y líder en el mercado, garantizando a nuestros clientes una experiencia única y productos que cumplen con los más altos estándares de excelencia.'
       />
 
       {isLoading && <ProductsSkeletons />}
