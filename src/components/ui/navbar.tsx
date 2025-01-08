@@ -38,8 +38,9 @@ export const NavbarUi = () => {
 
             {pathname === route.path && (
               <motion.div
-                layoutId="underline"
-                className='absolute bottom-0 left-0 right-0 height-1 bg-sky-400 border-b-2 border-white'
+                layoutId='underline'
+                animate
+                className='absolute bottom-[-5px] left-0 right-0 height-1 bg-sky-400 border-b-2 border-white/[0.8]'
               />
             )}
           </Link>

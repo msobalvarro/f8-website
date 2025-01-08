@@ -19,7 +19,7 @@ export default function Services() {
 
       {isLoading && <ProductsSkeletons />}
 
-      <div className='grid md:grid-cols-2 sm:grid-cols-1 w-full p-10 gap-10'>
+      <div className='grid md:grid-cols-2 sm:grid-cols-1 w-full mt-6 md:mt-10 gap-10'>
         {data?.map((service, index) => (<ServiceItem key={index} service={service} />))}
       </div>
     </UiLayout>

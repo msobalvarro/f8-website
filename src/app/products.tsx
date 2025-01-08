@@ -19,7 +19,7 @@ export default function Products() {
 
       {isLoading && <ProductsSkeletons />}
       
-      <article className='grid md:grid-cols-2 sm:grid-cols-1 gap-10 p-10 w-full'>
+      <article className='grid md:grid-cols-2 sm:grid-cols-1 mt-10 gap-10 w-full'>
         {products?.map((product: ProductsPropierties) => !product.archived && (
           <ProductItem key={crypto.randomUUID()} product={product} />
         ))}

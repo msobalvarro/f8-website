@@ -10,7 +10,7 @@ import { Hero } from '@/components/ui/hero'
 export default function Home() {
 
   return (
-    <UiLayout>
+    <UiLayout fullWidth>
       <Hero />
 
       <LazyLoadImage

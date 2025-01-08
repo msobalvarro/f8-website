@@ -10,7 +10,7 @@ interface Props {
 
 export const ProductItem = ({ product }: Props) => {
   return (
-    <div className='fade-in shadow-xl transition-all border-2 hover:border-slate-500 rounded-lg overflow-hidden shadow backdrop-blur border-gray-700 bg-slate-500/[0.2]'>
+    <div className='fade-in shadow-xl transition-all border-2 hover:border-slate-500 rounded-lg overflow-hidden shadow backdrop-blur border-gray-700 bg-gray-800/[0.2]'>
       <ProductSliderImage images={product.images} />
 
       <div className='p-5'>
