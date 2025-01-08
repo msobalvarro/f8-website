@@ -13,7 +13,7 @@ const routes = [
   { path: '/products', name: 'Productos' },
   { path: '/services', name: 'Servicios' },
   { path: '/contact', name: 'Contacto' },
-  { path: '/about', name: 'Información' },
+  { path: '/about', name: 'Acerca de F8' },
 ]
 
 export const NavbarUi = () => {
