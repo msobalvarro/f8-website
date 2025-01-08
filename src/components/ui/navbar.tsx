@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export const gradientNavbar = 'bg-gradient-to-r backdrop-blur from-sky-700 to-cyan-600/[0.15]'
 
-const clasess = 'w-full flex flex-col md:flex-row md:items-center md:justify-between py-4 px-8 sm:flex-column'
+const clasess = 'w-full shadow-xl flex flex-col md:flex-row md:items-center md:justify-between py-4 px-8 md:px-12 sm:flex-column'
 const routes = [
   { path: '/', name: 'Inicio' },
   { path: '/products', name: 'Productos' },
