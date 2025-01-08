@@ -13,7 +13,7 @@ export default function Contact() {
         description='¿Tienes preguntas o necesitas asistencia? Contáctanos a través de formulario, WhatsApp ó correo electrónico para obtener soporte rápido.'
       />
 
-      <section className='fade-in p-6 lg:p-10 rounded flex flex-col gap-8 bg-slate-500/[0.2] backdrop-blur shadow-xl w-full md:w-3/4'>
+      <section className='fade-in p-6 lg:p-10 rounded flex flex-col gap-8 bg-slate-500/[0.2] backdrop-blur shadow-xl w-full md:w-4/4 lg:w-4/6'>
         <ContactForm />
 
         <hr className='border-slate-100' />

@@ -1,3 +1,4 @@
+import 'react-photo-view/dist/react-photo-view.css'
 import './index.css'
 import App from './App.tsx'
 import { StrictMode } from 'react'

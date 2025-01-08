@@ -1,9 +1,7 @@
-'use client'
-
 import logo from '@/assets/logo/F8_Horizontal_Logo.png'
-import clsx from 'clsx'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link, useLocation } from 'react-router'
+import { motion } from 'framer-motion'
 
 export const gradientNavbar = 'bg-gradient-to-r backdrop-blur from-sky-700 to-cyan-600/[0.15]'
 
@@ -13,7 +11,7 @@ const routes = [
   { path: '/products', name: 'Productos' },
   { path: '/services', name: 'Servicios' },
   { path: '/contact', name: 'Contacto' },
-  { path: '/about', name: 'Acerca de F8' },
+  { path: '/about', name: 'Nosotros' },
 ]
 
 export const NavbarUi = () => {
@@ -30,15 +28,20 @@ export const NavbarUi = () => {
         </Link>
       </figure>
 
-      <div className='flex gap-6 items-center flex-1 justify-center md:justify-end'>
+      <div className='flex text-sm md:text-normal gap-4 md:gap-6 items-center flex-1 justify-center md:justify-end'>
         {routes.map((route, k) => (
           <Link
             key={k}
-            className={`hover:text-white/50 ${clsx({
-              'border-b-2': pathname === route.path,
-            })}`}
+            className={`hover:text-white/50 relative`}
             to={route.path}>
             {route.name}
+
+            {pathname === route.path && (
+              <motion.div
+                layoutId="underline"
+                className='absolute bottom-0 left-0 right-0 height-1 bg-sky-400 border-b-2 border-white'
+              />
+            )}
           </Link>
         ))}
       </div>

@@ -8,7 +8,7 @@ export const Hero = () => {
       <div className='flex flex-col text-center gap-8 items-center'>
         <LazyLoadImage
           src={logo}
-          className='w-32'
+          className='w-64'
           alt='logo' />
 
 
