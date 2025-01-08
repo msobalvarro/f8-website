@@ -1,6 +1,7 @@
 import logo from '@/assets/logo/F8_Horizontal_Logo.png'
 import { useEffect, useRef, useState } from 'react'
 import { BrandMarquee } from '../ui/marquee'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const MAX_FRAMES = 104
 
@@ -27,12 +28,12 @@ export const ParallaxFrames = () => {
 
   return (
     <article ref={scrollRef} className='bg-white w-full relative overflow-hidden'>
-      <img
+      <LazyLoadImage
         alt='Fortinet'
         className='w-16 md:w-32 lg:w-64 top-10 left-10 object-fit absolute'
         src={logo} />
 
-      <img
+      <LazyLoadImage
         alt='Fortinet'
         className='object-fit w-screen'
         src={`/fortinet-frames/ezgif-frame-${imageFrame}.png`} />
