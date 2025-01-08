@@ -17,8 +17,8 @@ export default function Products() {
         description='Somos importadores de marcas oficiales, nuestra calidad en nuestro productos nos define como empresa'
       />
 
-      {(!products && isLoading) && <ProductsSkeletons />}
-
+      {isLoading && <ProductsSkeletons />}
+      
       <article className='grid md:grid-cols-2 sm:grid-cols-1 gap-10 p-10 w-full'>
         {products?.map((product: ProductsPropierties) => !product.archived && (
           <ProductItem key={crypto.randomUUID()} product={product} />

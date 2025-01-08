@@ -10,7 +10,7 @@ export const ServiceItem = ({ service }: Props) => {
   return (
     <div className='fade-in flex-col flex rounded-xl shadow-xl items-center gap-10 flex-1 p-12 relative w-full overflow-hidden'>
 
-      <div className='absolute inset-0 bg-cover scale-110 transition bg-center blur-lg z-0'
+      <div className='absolute inset-0 bg-cover scale-125 transition bg-center blur-lg z-0'
         style={{
           backgroundImage: `url("${SERVER_URL}/images/${service.images[0]}")`,
         }} />

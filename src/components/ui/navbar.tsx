@@ -2,6 +2,7 @@
 
 import logo from '@/assets/logo/F8_Horizontal_Logo.png'
 import clsx from 'clsx'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link, useLocation } from 'react-router'
 
 export const gradientNavbar = 'bg-gradient-to-r backdrop-blur from-sky-700 to-cyan-600/[0.15]'
@@ -12,6 +13,7 @@ const routes = [
   { path: '/products', name: 'Productos' },
   { path: '/services', name: 'Servicios' },
   { path: '/contact', name: 'Contacto' },
+  { path: '/about', name: 'Información' },
 ]
 
 export const NavbarUi = () => {
@@ -21,7 +23,7 @@ export const NavbarUi = () => {
     <nav className={`${clasess} ${gradientNavbar}`}>
       <figure className='hidden md:flex'>
         <Link to='/'>
-          <img
+          <LazyLoadImage
             alt='logo'
             className='md:w-64 h-auto object-fit'
             src={logo} />

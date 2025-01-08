@@ -1,11 +1,12 @@
 import logo from '@/assets/logo/logo.png'
 import { gradientNavbar } from './navbar'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 export const Hero = () => {
   return (
     <section className={`w-full md:p-10 p-2 min-h-80 flex flex-col gap-10 ${gradientNavbar}`}>
       <div className='flex flex-col text-center gap-8 items-center'>
-        <img
+        <LazyLoadImage
           src={logo}
           className='w-32'
           alt='logo' />

@@ -1,4 +1,5 @@
 import logo from '@/assets/logo/logo.png'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 interface Props {
   title: string
@@ -7,7 +8,7 @@ interface Props {
 
 export const UiTitle = ({ title, description }: Props) => (
   <div className='flex flex-col items-center gap-2 text-center p-12'>
-    <img
+    <LazyLoadImage
       src={logo}
       className='w-64'
       alt='logo' />

@@ -15,7 +15,7 @@ export const PreviewServices = () => {
     <div className='flex flex-1 flex-col my-10 gap-10 items-center p-1 md:p-12 sm:p-2 w-full'>
       <p className='text-4xl self-start'>Servicios de F8</p>
 
-      {(isLoading && !services) && <ProductsSkeletons />}
+      {(isLoading) && <ProductsSkeletons />}
 
       <article className='grid md:grid-cols-2 sm:grid-cols-1 gap-10 w-full'>
         {(!isLoading) && services?.map(

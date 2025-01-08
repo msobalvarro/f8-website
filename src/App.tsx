@@ -5,8 +5,20 @@ import { NavbarUi } from './components/ui/navbar'
 import Products from './app/products'
 import Contact from './app/contact'
 import Services from './app/service'
+import { useFetch } from './hooks/useFetch'
+import { PreferencesPropierties } from './utils/interfaces'
+import { useEffect } from 'react'
+import { useStorePropierties } from './utils/store'
 
 function App() {
+  const { setPropierties } = useStorePropierties()
+  const { data } = useFetch<PreferencesPropierties[]>('/preferences')
+
+  useEffect(() => {
+    if (data) {
+      setPropierties(data)
+    }
+  }, [data, setPropierties])
 
   return (
     <BrowserRouter>

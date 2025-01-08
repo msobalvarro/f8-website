@@ -1,19 +1,16 @@
-'use client'
-
-import { PreferencesPropierties } from '@/utils/interfaces'
+import { useStorePropierties } from '@/utils/store'
 import { IoLogoWhatsapp, IoMdMail } from 'react-icons/io'
 import { IoCall } from 'react-icons/io5'
 
 const itemClasess = 'bg-gray-900 hover:bg-slate-700 flex flex-1 flex-col items-center gap-3 bg-gray-800 rounded-lg p-4'
 
-interface Props {
-  data: PreferencesPropierties[]
-}
 
-export const ContactCard = ({ data }: Props) => {
+export const ContactCard = () => {
+  const { propierties: data } = useStorePropierties()
+
   return (
     <div className='flex flex-col md:flex-row gap-8'>
-      <a href='#' className={itemClasess}>
+      <a target='_blank' href={`mailto:${data?.find(e => e.key === 'emailContact')?.value}`} className={itemClasess}>
         <span className='bg-white rounded-full p-4'>
           <IoMdMail className='text-3xl text-gray-500' />
         </span>
@@ -23,7 +20,7 @@ export const ContactCard = ({ data }: Props) => {
       </a>
 
 
-      <a href='#' className={itemClasess}>
+      <a target='_blank' href={`tel:${data?.find(e => e.key === 'phoneContact')?.value}`} className={itemClasess}>
         <span className='bg-white rounded-full p-4'>
           <IoCall className='text-3xl text-sky-700' />
         </span>
@@ -33,7 +30,7 @@ export const ContactCard = ({ data }: Props) => {
       </a>
 
 
-      <a href='#' className={itemClasess}>
+      <a target='_blank' href={`wa.me/${data?.find(e => e.key === 'whatsapp')?.value}`} className={itemClasess}>
         <span className='bg-white rounded-full p-4'>
           <IoLogoWhatsapp className='text-3xl text-green-700' />
         </span>
