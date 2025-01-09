@@ -9,7 +9,7 @@ export const ContactCard = () => {
   const { propierties: data } = useStorePropierties()
 
   return (
-    <div className='flex flex-row gap-8'>
+    <div className='flex flex-row sm:gap-2 lg:gap-8'>
       <a target='_blank' href={`mailto:${data?.find(e => e.key === 'emailContact')?.value}`} className={itemClasess}>
         <span className='bg-white rounded-full p-4'>
           <IoMdMail className='text-3xl text-gray-500' />
