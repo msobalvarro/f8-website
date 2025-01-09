@@ -14,14 +14,14 @@ export default function Services() {
     <UiLayout>
       <UiTitle
         title='Cotiza nuestros servicios'
-        description='Explora la amplia gama de servicios que ofrecemos, diseñados para adaptarse a tus necesidades específicas y superar tus expectativas. Ya sea que busques soluciones personalizadas, atención rápida o resultados de alta calidad, estamos aquí para brindarte el apoyo que necesitas. Nuestro compromiso es ofrecerte un servicio excepcional, respaldado por experiencia, profesionalismo y dedicación en cada detalle.'
+        description='Explora la amplia gama de servicios que ofrecemos, diseñados para adaptarse a tus necesidades específicas y superar tus expectativas.'
       />
 
       {isLoading && <ProductsSkeletons />}
 
-      <div className='grid md:grid-cols-2 sm:grid-cols-1 w-full mt-6 md:mt-10 gap-10'>
+      <article className='grid lg:grid-cols-2 grid-cols-1 w-full mt-6 md:mt-10 gap-10'>
         {data?.map((service, index) => (<ServiceItem key={index} service={service} />))}
-      </div>
+      </article>
     </UiLayout>
   )
 }
