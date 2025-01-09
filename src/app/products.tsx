@@ -6,6 +6,7 @@ import { ProductsPropierties } from '@/utils/interfaces'
 import { ProductsSkeletons } from '@/components/products/cardSkeleton'
 import { UiTitle } from '@/components/ui/title'
 import { useFetch } from '@/hooks/useFetch'
+import { v4 } from 'uuid'
 
 export default function Products() {
   const { data: products, isLoading } = useFetch<ProductsPropierties[]>('/products')
@@ -21,7 +22,7 @@ export default function Products() {
       
       <article className='grid md:grid-cols-2 sm:grid-cols-1 mt-10 gap-10 w-full'>
         {products?.map((product: ProductsPropierties) => !product.archived && (
-          <ProductItem key={crypto.randomUUID()} product={product} />
+          <ProductItem key={v4()} product={product} />
         ))}
       </article>
     </UiLayout>

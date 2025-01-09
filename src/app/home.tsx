@@ -10,7 +10,7 @@ import { Hero } from '@/components/ui/hero'
 export default function Home() {
 
   return (
-    <UiLayout fullWidth>
+    <>
       <Hero />
 
       <LazyLoadImage
@@ -28,7 +28,6 @@ export default function Home() {
         alt='baner' />
 
       <PreviewProducts />
-
-    </UiLayout>
+    </>
   )
 }

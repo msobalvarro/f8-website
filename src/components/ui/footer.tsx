@@ -1,4 +1,4 @@
-import logo from '@/assets/logo/F8_Logo_Basic_Variant.png'
+import logo from '@/assets/logo/logo.png'
 import { useStorePropierties } from '@/utils/store'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
@@ -8,13 +8,11 @@ export const Footer = () => {
   const { propierties } = useStorePropierties()
 
   return (
-    <footer className='flex flex-col backdrop-blur bg-gray-800/50 gap-10 md:flex-row justify-between items-center text-white p-8 lg:p-12 lg:py-4 w-full text-sm md:text-normal'>
-      <figure className='bg-white p-6 rounded-full w-32 h-32 flex items-center justify-center'>
-        <LazyLoadImage
-          src={logo}
-          className='w-full'
-          alt='logo' />
-      </figure>
+    <footer className='flex flex-col backdrop-blur bg-gray-800/50 gap-10 lg:flex-row justify-between items-center text-white p-8 lg:p-12 lg:py-4 w-full text-sm md:text-normal'>
+      <LazyLoadImage
+        src={logo}
+        className='w-32'
+        alt='logo' />
 
       <div className='flex items-center md:text-lg justify-center gap-4 flex-1'>
         <p>F8 Technologies {new Date().getFullYear()}</p>

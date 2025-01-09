@@ -40,7 +40,7 @@ export const BrandMarquee = ({ addClass }: Props) => {
     <Marquee className={`p-10 overflow-hidden w-full ${addClass}`}>
       {brands.map((brand, index) => (
         <LazyLoadImage
-          className='w-32 md:w-48 mx-10'
+          className='w-16 md:w-48 mx-10'
           key={index}
           src={brand}
           alt={`image ${index}`} />

@@ -30,7 +30,7 @@ export const ParallaxFrames = () => {
     <article ref={scrollRef} className='bg-white w-full relative overflow-hidden'>
       <LazyLoadImage
         alt='Fortinet'
-        className='w-16 md:w-32 lg:w-64 top-10 left-10 object-fit absolute'
+        className='w-32 md:w-32 lg:w-64 top-10 left-10 object-fit absolute'
         src={logo} />
 
       <LazyLoadImage

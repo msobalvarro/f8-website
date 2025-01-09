@@ -1,4 +1,3 @@
-'use client'
 
 import phoneCodes from '@/utils/phoneCountries.json'
 import { FormEvent, useState } from 'react'
@@ -10,7 +9,7 @@ import { AxiosError } from 'axios'
 import { toast } from 'react-toastify'
 import { axiosInstance } from '@/utils/fetch'
 import { useParams } from '@/hooks/useParams'
-// import { useSearchParams } from 'next/navigation'
+import { v4 } from 'uuid'
 
 const initialState: FormContactState = {
   email: '',
@@ -112,7 +111,7 @@ export const ContactForm = () => {
               value={phoneCode}
               className={`${inputClassNames}`}>
               {phoneCodes.map(phoneCodeItem => (
-                <option value={phoneCodeItem.dial_code} key={crypto.randomUUID()}>
+                <option value={phoneCodeItem.dial_code} key={v4()}>
                   {phoneCodeItem.emoji} ({phoneCodeItem.dial_code})
                 </option>
               ))}
