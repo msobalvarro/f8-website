@@ -66,7 +66,7 @@ export default function About() {
         </div>
 
         <figure className='text-center md:p-10'>
-          <img className='rounded-full w-32 md:w-64' src='https://media.licdn.com/dms/image/v2/C4E03AQFzbMZIS7v7AA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1660861748387?e=1742428800&v=beta&t=IbdZ2C6_yeog0p3rtYFSNymHLsOe2lKetj8sF-6BtcY' />
+          <img className='rounded-full w-32 md:w-64 mb-6' src='https://media.licdn.com/dms/image/v2/C4E03AQFzbMZIS7v7AA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1660861748387?e=1742428800&v=beta&t=IbdZ2C6_yeog0p3rtYFSNymHLsOe2lKetj8sF-6BtcY' />
           <figcaption>
             <b>Daniel Pérez</b>
             <p className='text-gray-500'>Founder of F8Technologies</p>
