@@ -28,7 +28,7 @@ export const ContactForm = () => {
   const [dataForm, setDataForm] = useState<FormContactState>({
     ...initialState,
     ...(customMessageProduct && {
-      message: `Me gustaria saber el precio del producto ${customMessageProduct}`
+      message: `Me gustaria cotizar del producto ${customMessageProduct}`
     })
   })
 

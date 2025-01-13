@@ -11,7 +11,7 @@ const routes = [
   { path: '/products', name: 'Productos' },
   { path: '/services', name: 'Servicios' },
   { path: '/contact', name: 'Contacto' },
-  // { path: '/about', name: 'Nosotros' },
+  { path: '/about', name: 'Nosotros' },
 ]
 
 export const NavbarUi = () => {
