@@ -42,10 +42,10 @@ export default function About() {
         </div>
       </article>
 
-      <article className='flex justify-evenly items-center md:gap-10 md:bg-gray-800/[0.2] md:border-2 md:border-slate-600 backdrop-blur p-6 md:p-12 rounded-xl'>
-        <figure className='text-center md:p-10'>
+      <article className='flex flex-col gap-10 md:flex-row md:justify-evenly md:items-center md:gap-10 md:bg-gray-800/[0.2] md:border-2 md:border-slate-600 backdrop-blur p-6 md:p-12 rounded-xl'>
+        <figure className='self-center md:text-center md:p-10 flex flex-col items-center'>
           <img className='rounded-full w-32 md:w-64 mb-6' src='https://media.licdn.com/dms/image/v2/C4E03AQFzbMZIS7v7AA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1660861748387?e=1742428800&v=beta&t=IbdZ2C6_yeog0p3rtYFSNymHLsOe2lKetj8sF-6BtcY' />
-          <figcaption>
+          <figcaption className='text-center'>
             <b>Daniel Pérez</b>
             <p className='text-gray-500'>Founder of F8Technologies</p>
           </figcaption>
