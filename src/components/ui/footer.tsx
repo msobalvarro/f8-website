@@ -1,4 +1,5 @@
 import logo from '@/assets/logo/logo.png'
+import { routes } from '@/utils/constants'
 import { useStorePropierties } from '@/utils/store'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
@@ -14,55 +15,58 @@ export const Footer = () => {
         className='w-32'
         alt='logo' />
 
-      <div className='flex flex-col md:flex-row items-center md:text-lg justify-center gap-4 flex-1'>
-        <p>F8 Technologies {new Date().getFullYear()}</p>
-        <p>Todos los derechos reservados</p>
-        <Link to='/contact' className='text-sky-200 hover:underline'>Contacto</Link>
+      <div className='flex flex-1 flex-col gap-8'>
+        <div className='flex justify-center md:justify-end space-x-3 text-xl flex-1'>
+          <a
+            href={propierties?.find(e => e.key === 'facebook')?.value}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'
+          >
+            <FaFacebook />
+          </a>
+          <a
+            href={propierties?.find(e => e.key === 'twitter')?.value}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='flex items-center justify-center w-12 h-12 bg-blue-400 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'
+          >
+            <FaTwitter />
+          </a>
+          <a
+            href={propierties?.find(e => e.key === 'instagram')?.value}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='flex items-center justify-center w-12 h-12 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'
+          >
+            <FaInstagram />
+          </a>
+          <a
+            // href='https://linkedin.com'
+            href={propierties?.find(e => e.key === 'linkedin')?.value}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='flex items-center justify-center w-12 h-12 bg-blue-700 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href={`wa.me/${propierties?.find(e => e.key === 'whatsapp')?.value}`}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='flex items-center justify-center w-12 h-12 bg-green-500 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'
+          >
+            <FaWhatsapp />
+          </a>
+        </div>
+
+        <div className='flex items-center md:text-lg justify-center md:justify-end gap-4 flex-1'>
+          {routes.map(route => (
+            <Link to={route.path} key={route.path} className='text-sky-200 hover:underline'>{route.name}</Link>
+          ))}
+        </div>
       </div>
 
-      <div className='flex justify-center md:justify-end space-x-3 text-xl'>
-        <a
-          href={propierties?.find(e => e.key === 'facebook')?.value}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'
-        >
-          <FaFacebook />
-        </a>
-        <a
-          href={propierties?.find(e => e.key === 'twitter')?.value}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='flex items-center justify-center w-12 h-12 bg-blue-400 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'
-        >
-          <FaTwitter />
-        </a>
-        <a
-          href={propierties?.find(e => e.key === 'instagram')?.value}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='flex items-center justify-center w-12 h-12 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'
-        >
-          <FaInstagram />
-        </a>
-        <a
-          // href='https://linkedin.com'
-          href={propierties?.find(e => e.key === 'linkedin')?.value}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='flex items-center justify-center w-12 h-12 bg-blue-700 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          href={`wa.me/${propierties?.find(e => e.key === 'whatsapp')?.value}`}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='flex items-center justify-center w-12 h-12 bg-green-500 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'
-        >
-          <FaWhatsapp />
-        </a>
-      </div>
     </footer>
   )
 }

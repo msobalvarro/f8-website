@@ -2,17 +2,11 @@ import logo from '@/assets/logo/F8_Horizontal_Logo.png'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link, useLocation } from 'react-router'
 import { motion } from 'framer-motion'
+import { routes } from '@/utils/constants'
 
 export const gradientNavbar = 'bg-gradient-to-r backdrop-blur from-sky-700 to-cyan-600/[0.15]'
 
 const clasess = 'w-full shadow-xl flex flex-col md:flex-row md:items-center md:justify-between py-4 px-8 md:px-12 sm:flex-column'
-const routes = [
-  { path: '/', name: 'Inicio' },
-  { path: '/products', name: 'Productos' },
-  { path: '/services', name: 'Servicios' },
-  { path: '/contact', name: 'Contacto' },
-  { path: '/about', name: 'Nosotros' },
-]
 
 export const NavbarUi = () => {
   const { pathname } = useLocation()
