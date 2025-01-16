@@ -3,7 +3,7 @@ import { UiTitle } from '@/components/ui/title';
 
 export default function About() {
   return (
-    <UiLayout addClassName='flex flex-col md:gap-20'>
+    <UiLayout addClassName='flex flex-col md:gap-12'>
       <UiTitle
         title='Acerca de F8'
         description='Somos una empresa líder en tecnología, control y monitorización, que ofrece servicios de alta calidad y confianza a todos nuestros clientes.'
