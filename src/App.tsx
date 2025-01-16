@@ -10,6 +10,20 @@ import Products from './app/products'
 import Contact from './app/contact'
 import Services from './app/service'
 import About from './app/about'
+import { AnimatePresence, motion } from 'framer-motion'
+import { pageVariants } from './utils/constants'
+
+const MotionComponent = ({ children }) => (
+  <motion.div
+    initial='initial'
+    animate='animate'
+    exit='exit'
+    variants={pageVariants}
+    transition={{ duration: 0.5 }}
+  >
+    {children}
+  </motion.div>
+)
 
 function App() {
   const { setPropierties } = useStorePropierties()
@@ -25,13 +39,35 @@ function App() {
     <BrowserRouter>
       <main>
         <NavbarUi />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/products' element={<Products />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/services' element={<Services />} />
-          <Route path='/about' element={<About />} />
-        </Routes>
+        <AnimatePresence mode='sync'>
+          <Routes>
+            <Route path='/' element={
+              <MotionComponent>
+                <Home />
+              </MotionComponent>
+            } />
+            <Route path='/products' element={
+              <MotionComponent>
+                <Products />
+              </MotionComponent>
+            } />
+            <Route path='/contact' element={
+              <MotionComponent>
+                <Contact />
+              </MotionComponent>
+            } />
+            <Route path='/services' element={
+              <MotionComponent>
+                <Services />
+              </MotionComponent>
+            } />
+            <Route path='/about' element={
+              <MotionComponent>
+                <About />
+              </MotionComponent>
+            } />
+          </Routes>
+        </AnimatePresence>
         <Footer />
       </main>
     </BrowserRouter>
