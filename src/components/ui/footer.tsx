@@ -14,7 +14,7 @@ export const Footer = () => {
         className='w-32'
         alt='logo' />
 
-      <div className='flex items-center md:text-lg justify-center gap-4 flex-1'>
+      <div className='flex flex-col md:flex-row items-center md:text-lg justify-center gap-4 flex-1'>
         <p>F8 Technologies {new Date().getFullYear()}</p>
         <p>Todos los derechos reservados</p>
         <Link to='/contact' className='text-sky-200 hover:underline'>Contacto</Link>
