@@ -69,7 +69,7 @@ export const Footer = () => {
 
           {socialMediaLinks.whatsapp && (
             <a
-              href={`wa.me/${propierties?.find(e => e.key === 'whatsapp')?.value}`}
+              href={`https://wa.me/${socialMediaLinks.whatsapp}`}
               target='_blank'
               rel='noopener noreferrer'
               className='flex items-center justify-center w-12 h-12 bg-green-500 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'>
