@@ -12,7 +12,7 @@ export default function About() {
 
       <article className='flex md:flex-row flex-col gap-10'>
         <div className='flex flex-1 gap-4 flex-col md:bg-gray-800/[0.2] md:border-2 md:border-slate-600 backdrop-blur p-8 rounded-xl'>
-          <h2 className='text-2xl mb-8'>Misión</h2>
+          <h2 className='text-2xl mb-8 tag-line'>Misión</h2>
           <p>
             Proveer soluciones innovadoras en la planeación e implementación de proyectos informáticos, ayudando a nuestros clientes a alcanzar sus objetivos estratégicos mediante tecnología avanzada, procesos eficientes y un equipo de especialistas comprometidos con la excelencia y la transformación digital.
           </p>
@@ -27,7 +27,7 @@ export default function About() {
         </div>
 
         <div className='flex flex-1 gap-4 flex-col md:bg-gray-800/[0.2] md:border-2 md:border-slate-600 backdrop-blur p-8 rounded-xl'>
-          <h2 className='text-2xl mb-8'>Visión</h2>
+          <h2 className='text-2xl mb-8 tag-line'>Visión</h2>
           <p>
             Ser líderes en el sector tecnológico, reconocidos por nuestra capacidad de diseñar e implementar proyectos informáticos que generen valor sostenible, posicionándonos como socios estratégicos de empresas que buscan adaptarse y sobresalir en un entorno digital en constante evolución.
           </p>

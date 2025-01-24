@@ -5,13 +5,14 @@ import { useFetch } from './hooks/useFetch'
 import { PreferencesPropierties } from './utils/interfaces'
 import { ReactElement, useEffect } from 'react'
 import { useStorePropierties } from './utils/store'
+import { AnimatePresence, motion } from 'framer-motion'
+import { pageVariants } from './utils/constants'
 import Home from './app/home'
 import Products from './app/products'
 import Contact from './app/contact'
 import Services from './app/service'
 import About from './app/about'
-import { AnimatePresence, motion } from 'framer-motion'
-import { pageVariants } from './utils/constants'
+import { ToastContainer } from 'react-toastify'
 
 const MotionComponent = ({ children }: { children: ReactElement }) => (
   <motion.div
@@ -70,6 +71,8 @@ function App() {
         </AnimatePresence>
         <Footer />
       </main>
+
+      <ToastContainer />
     </BrowserRouter>
 
   )

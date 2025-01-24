@@ -13,7 +13,7 @@ export const PreviewProducts = () => {
 
   return (
     <div className='flex flex-col my-10 gap-10 items-center md:p-12 sm:p-2 w-full'>
-      <p className='text-4xl md:self-start self-center'>Productos de F8</p>
+      <h2 className='text-4xl md:self-start self-center tag-line'>Productos de F8</h2>
 
       {(isLoading) && <ProductsSkeletons />}
 

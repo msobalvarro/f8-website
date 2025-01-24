@@ -12,17 +12,17 @@ export const NavbarUi = () => {
   const { pathname } = useLocation()
 
   return (
-    <nav className={`${clasess} backdrop-blur bg-white text-[#00143f] fixed top-0 h-[65px]`}>
-      <figure className='hidden md:flex absolute top-[10px]'>
+    <nav className={`${clasess} backdrop-blur bg-white text-[#00143f] font-semibold fixed top-0 h-[65px]`}>
+      <figure className='hidden md:flex absolute top-[10px] rounded-full '>
         <Link to='/'>
           <LazyLoadImage
             alt='logo'
-            className='md:w-[96px] h-auto object-fit rounded-full shadow-2xl border-[#00143f50]'
+            className='md:w-[96px] h-auto object-fit rounded-full shadow-2xl'
             src={logo} />
         </Link>
       </figure>
 
-      <div className='flex text-sm gap-4 md:gap-6 items-center flex-1 justify-center md:justify-end'>
+      <div className='flex text-sm gap-4 md:gap-6 items-center flex-1 justify-center md:justify-end md:text-lg'>
         {routes.map((route, k) => (
           <Link
             key={k}
