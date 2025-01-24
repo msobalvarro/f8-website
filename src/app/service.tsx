@@ -1,5 +1,3 @@
-'use client'
-
 import { ServiceItem } from '@/components/services/serviceItem'
 import { UiLayout } from '@/components/ui/layout'
 import { UiTitle } from '@/components/ui/title'

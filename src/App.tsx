@@ -37,7 +37,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <main>
+      <main className='pt-[64px]'>
         <NavbarUi />
         <AnimatePresence mode='sync'>
           <Routes>
