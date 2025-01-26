@@ -3,6 +3,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link, useLocation } from 'react-router'
 import { motion } from 'framer-motion'
 import { routes } from '@/utils/constants'
+import clsx from 'clsx'
 
 export const gradientNavbar = 'bg-gradient-to-r backdrop-blur from-sky-700 to-cyan-600/[0.15]'
 
@@ -26,7 +27,9 @@ export const NavbarUi = () => {
         {routes.map((route, k) => (
           <Link
             key={k}
-            className={`hover:opacity-50 transition relative`}
+            className={`hover:opacity-50 transition relative ${clsx({
+              'text-[#3dbab8]': pathname === route.path,
+            })}`}
             to={route.path}>
             {route.name}
 

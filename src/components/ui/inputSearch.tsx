@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+import { useState } from 'react'
 import { CiSearch } from 'react-icons/ci'
 import { MdOutlineClear } from 'react-icons/md'
 
@@ -7,12 +9,20 @@ interface Props {
 }
 
 export const InputSearch = ({ onChangeText, value }: Props) => {
+  const [focus, setFocus] = useState(false)
+  
   return (
-    <div className='flex items-center border border-white[0.2] rounded-xl px-4'>
+    <div className={`flex items-center transition-all border rounded-xl backdrop-blur-md px-4 ${clsx({
+      'border-white[0.2]': !focus,
+      'border-[#0FD8D5] bg-white/[0.2]': focus,
+
+    })}`}>
       <CiSearch />
 
       <input
         type='text'
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
         value={value}
         onChange={(e) => onChangeText(e.target.value)}
         placeholder='Buscar...'
