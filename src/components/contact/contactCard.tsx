@@ -2,7 +2,7 @@ import { useStorePropierties } from '@/utils/store'
 import { IoLogoWhatsapp, IoMdMail } from 'react-icons/io'
 import { IoCall } from 'react-icons/io5'
 
-const itemClasess = 'bg-slate-900 border border-slate-800 hover:bg-slate-700 flex flex-1 flex-col items-center gap-3 bg-gray-800 rounded-lg p-4'
+const itemClasess = 'border border-white/[0.2] hover:bg-slate-700/[0.2] flex flex-1 flex-col items-center gap-3 rounded-lg p-4'
 
 
 export const ContactCard = () => {
