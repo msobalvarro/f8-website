@@ -52,7 +52,7 @@ export const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={submit} className='flex flex-col gap-4 rounded-xl shadow-xl'>
+    <form onSubmit={submit} className='flex flex-col gap-4'>
       <div className='flex md:flex-row flex-col gap-4'>
         <label className='flex-1'>
           <span className='text-sm'>Nombre Completo *</span>

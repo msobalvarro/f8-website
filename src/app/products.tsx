@@ -8,6 +8,7 @@ import { UiTitle } from '@/components/ui/title'
 import { useFetch } from '@/hooks/useFetch'
 import { v4 } from 'uuid'
 import { useState } from 'react'
+import { InputSearch } from '@/components/ui/inputSearch'
 
 export default function Products() {
   const { data: products, isLoading } = useFetch<ProductsPropierties[]>('/products')
@@ -26,12 +27,9 @@ export default function Products() {
         description='Somos importadores de marcas oficiales reconocidas a nivel internacional, comprometidos con ofrecer productos de la más alta calidad.'
       />
 
-      <input
-        type='text'
-        value={filter}
-        placeholder='Buscar producto'
-        className='w-full p-3 mt-6 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-gray-900'
-        onChange={(e) => setFilter(e.target.value)} />
+      <div className='flex justify-center flex-1 w-full'>
+        <InputSearch value={filter} onChangeText={setFilter} />
+      </div>
 
       {isLoading && <ProductsSkeletons />}
 

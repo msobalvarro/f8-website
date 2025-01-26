@@ -34,7 +34,7 @@ export const NavbarUi = () => {
               <motion.div
                 layoutId='underline'
                 animate
-                className='absolute bottom-[-5px] left-0 right-0 height-1 border-b-2 border-gray-800/[0.8]'
+                className='absolute bottom-[-5px] left-0 right-0 height-1 border-b-2 border-[#0FD8D5]'
               />
             )}
           </Link>

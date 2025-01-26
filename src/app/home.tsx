@@ -15,14 +15,14 @@ export default function Home() {
       <Brands />
 
       <LazyLoadImage
-        className='w-full'
+        className='w-full border-y-4 border-y-[#0FD8D5]'
         src={banner2}
         alt='baner' />
 
       <PreviewServices />
 
       <LazyLoadImage
-        className='w-full'
+        className='w-full border-y-4 border-y-[#0FD8D5]'
         src={banner3}
         alt='baner' />
 

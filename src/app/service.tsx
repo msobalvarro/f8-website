@@ -4,9 +4,18 @@ import { UiTitle } from '@/components/ui/title'
 import { ServiceResponse } from '@/utils/interfaces'
 import { useFetch } from '@/hooks/useFetch'
 import { ProductsSkeletons } from '@/components/products/cardSkeleton'
+import { useState } from 'react'
+import { InputSearch } from '@/components/ui/inputSearch'
 
 export default function Services() {
   const { data, isLoading } = useFetch<ServiceResponse[]>('/services')
+  const [filter, setFilter] = useState('')
+
+  const dataFilter = data?.filter((service) =>
+    `${service.title} ${service.description}`
+      .toLowerCase()
+      .includes(filter.toLowerCase())
+  )
 
   return (
     <UiLayout>
@@ -15,9 +24,13 @@ export default function Services() {
         description='Explora la amplia gama de servicios que ofrecemos, diseñados para adaptarse a tus necesidades específicas y superar tus expectativas.'
       />
 
+      <div className='flex justify-center flex-1 w-full'>
+        <InputSearch value={filter} onChangeText={setFilter} />
+      </div>
+
       <article className='grid lg:grid-cols-2 grid-cols-1 w-full mt-6 md:mt-10 gap-10'>
         {isLoading && <ProductsSkeletons />}
-        {data?.map((service, index) => (<ServiceItem key={index} service={service} />))}
+        {dataFilter?.map((service, index) => (<ServiceItem key={index} service={service} />))}
       </article>
     </UiLayout>
   )
