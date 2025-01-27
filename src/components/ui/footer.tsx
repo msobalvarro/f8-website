@@ -69,7 +69,7 @@ export const Footer = () => {
         )}
       </div>
 
-      <p className='text-center text-gray-500 text-sm mt-4'>
+      <p className='text-center text-gray-300 text-sm mt-4'>
         F8 Technologies &copy; {new Date().getFullYear()} - Todos los derechos reservados
       </p>
     </footer>

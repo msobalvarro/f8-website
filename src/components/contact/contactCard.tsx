@@ -11,8 +11,8 @@ export const ContactCard = () => {
   return (
     <div className='flex flex-row gap-2 lg:gap-8'>
       <a target='_blank' href={`mailto:${data?.find(e => e.key === 'emailContact')?.value}`} className={itemClasess}>
-        <span className='bg-white rounded-full p-2 md:p-4'>
-          <IoMdMail className='text-3xl text-slate-600' />
+        <span className='rounded-full p-2 md:p-4'>
+          <IoMdMail className='text-3xl text-[#0FD8D5]' />
         </span>
 
         <p className='text-xl hidden md:block'>Escribenos</p>
@@ -21,8 +21,8 @@ export const ContactCard = () => {
 
 
       <a target='_blank' href={`tel:${data?.find(e => e.key === 'phoneContact')?.value}`} className={itemClasess}>
-        <span className='bg-white rounded-full p-2 md:p-4'>
-          <IoCall className='text-3xl text-sky-700' />
+        <span className='rounded-full p-2 md:p-4'>
+          <IoCall className='text-3xl text-sky-400' />
         </span>
 
         <p className='text-xl hidden md:block'>Llámanos</p>
@@ -31,8 +31,8 @@ export const ContactCard = () => {
 
 
       <a target='_blank' href={`wa.me/${data?.find(e => e.key === 'whatsapp')?.value}`} className={itemClasess}>
-        <span className='bg-white rounded-full p-2 md:p-4'>
-          <IoLogoWhatsapp className='text-3xl text-green-700' />
+        <span className='rounded-full p-2 md:p-4'>
+          <IoLogoWhatsapp className='text-3xl text-green-400' />
         </span>
 
         <p className='text-xl hidden md:block'>WhatsApp</p>
