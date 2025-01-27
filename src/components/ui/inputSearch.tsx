@@ -14,7 +14,7 @@ export const InputSearch = ({ onChangeText, value }: Props) => {
   return (
     <div className={`flex items-center transition-all border rounded-xl backdrop-blur-md px-4 ${clsx({
       'border-white[0.2]': !focus,
-      'border-[#0FD8D5] bg-white/[0.2]': focus,
+      'border-[#0FD8D5] bg-white/[0.1]': focus,
 
     })}`}>
       <CiSearch />
