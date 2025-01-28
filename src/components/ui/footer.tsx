@@ -2,6 +2,8 @@ import { useStorePropierties } from '@/utils/store'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa'
 import { Link } from 'react-router'
 
+const buttonClasess = 'rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300'
+
 export const Footer = () => {
   const { propierties } = useStorePropierties()
 
@@ -21,7 +23,7 @@ export const Footer = () => {
             href={socialMediaLinks.facebook}
             target='_blank'
             rel='noopener noreferrer'
-            className='flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'>
+            className={`${buttonClasess} text-blue-600`}>
             <FaFacebook />
           </a>
         )}
@@ -31,7 +33,7 @@ export const Footer = () => {
             href={socialMediaLinks.x}
             target='_blank'
             rel='noopener noreferrer'
-            className='flex items-center justify-center w-12 h-12 bg-blue-400 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'>
+            className={`${buttonClasess} text-blue-400`}>
             <FaTwitter />
           </a>
         )}
@@ -42,7 +44,7 @@ export const Footer = () => {
               href={socialMediaLinks.instagram}
               target='_blank'
               rel='noopener noreferrer'
-              className='flex items-center justify-center w-12 h-12 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'>
+              className={`${buttonClasess} text-pink-500`}>
               <FaInstagram />
             </a>
           </Link>
@@ -53,7 +55,7 @@ export const Footer = () => {
             href={socialMediaLinks.linkedin}
             target='_blank'
             rel='noopener noreferrer'
-            className='flex items-center justify-center w-12 h-12 bg-blue-700 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'>
+            className={`${buttonClasess} text-blue-700`}>
             <FaLinkedin />
           </a>
         )}
@@ -63,7 +65,7 @@ export const Footer = () => {
             href={`https://wa.me/${socialMediaLinks.whatsapp}`}
             target='_blank'
             rel='noopener noreferrer'
-            className='flex items-center justify-center w-12 h-12 bg-green-500 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 text-white'>
+            className={`${buttonClasess} text-green-500`}>
             <FaWhatsapp />
           </a>
         )}
