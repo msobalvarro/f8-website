@@ -12,6 +12,7 @@ export const Footer = () => {
     x: propierties?.find(e => e.key === 'x')?.value,
     linkedin: propierties?.find(e => e.key === 'linkedin')?.value,
     whatsapp: propierties?.find(e => e.key === 'whatsapp')?.value,
+    whatsapp2: propierties?.find(e => e.key === 'whatsapp2')?.value,
     instagram: propierties?.find(e => e.key === 'instagram')?.value,
   }
 
@@ -66,6 +67,16 @@ export const Footer = () => {
             target='_blank'
             rel='noopener noreferrer'
             className={`${buttonClasess} text-green-500`}>
+            <FaWhatsapp />
+          </a>
+        )}
+        
+        {socialMediaLinks.whatsapp2 && (
+          <a
+            href={`https://wa.me/${socialMediaLinks.whatsapp2}`}
+            target='_blank'
+            rel='noopener noreferrer'
+            className={`${buttonClasess} text-sky-500`}>
             <FaWhatsapp />
           </a>
         )}

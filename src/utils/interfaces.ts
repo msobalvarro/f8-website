@@ -74,6 +74,7 @@ export interface ServicesPropierties {
   archived?: boolean
   pinned?: boolean
   createdAt?: string
+  updatedAt?: string
 }
 
 export interface NewAndUpdateServiceProps extends ServicesPropierties { 
