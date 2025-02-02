@@ -1,3 +1,4 @@
+import 'animate.css'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { Footer } from './components/ui/footer'
 import { NavbarUi } from './components/ui/navbar'

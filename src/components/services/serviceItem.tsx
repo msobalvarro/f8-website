@@ -9,7 +9,7 @@ interface Props {
 
 export const ServiceItem = ({ service }: Props) => {
   return (
-    <div className='fade-in flex-col flex backdrop-blur bg-white text-[#00143F] rounded-xl shadow-xl items-center gap-10 flex-1 p-6 md:p-12 relative w-full overflow-hidden'>
+    <div className='animate__animated animate__fadeInDown flex-col flex backdrop-blur bg-white text-[#00143F] rounded-xl shadow-xl items-center gap-10 flex-1 p-6 md:p-12 relative w-full overflow-hidden'>
       <div className='flex flex-col gap-2 flex-1 z-20'>
         <div className='flex items-center justify-end gap-2 text-gray-500'>
           <FaCalendarCheck />

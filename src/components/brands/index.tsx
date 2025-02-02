@@ -3,7 +3,7 @@ import { AiFillSafetyCertificate } from 'react-icons/ai'
 
 export const Brands = () => {
   return (
-    <article className='bg-white w-full relative overflow-hidden flex flex-col gap-4 pt-8'>
+    <article className='bg-white w-full relative overflow-hidden flex flex-col gap-4 pt-8 animate__animated animate__fadeInUp'>
       <div className='flex justify-center items-center gap-4 '>
         <AiFillSafetyCertificate className='text-4xl text-[#00143F] ' />
         <h2 className='text-gray-800 font-semibold md:text-3xl'>
