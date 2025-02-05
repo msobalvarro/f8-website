@@ -1,9 +1,7 @@
 import logo from '@/assets/logo/logo.png'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link, useLocation } from 'react-router'
 import { motion } from 'framer-motion'
 import { routes } from '@/utils/constants'
-import clsx from 'clsx'
 import { AnimatedImage } from './image'
 
 export const gradientNavbar = 'bg-gradient-to-r backdrop-blur from-sky-700 to-cyan-600/[0.15]'
@@ -16,6 +14,7 @@ const clasess = `
   backdrop-blur bg-white/[0.8] text-[#00143f] font-semibold
   fixed
   top-0
+  gap-4
   md:top-[2%]
   h-[65px]
   w-full
