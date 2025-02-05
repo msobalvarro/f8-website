@@ -4,21 +4,36 @@ import { Link, useLocation } from 'react-router'
 import { motion } from 'framer-motion'
 import { routes } from '@/utils/constants'
 import clsx from 'clsx'
+import { AnimatedImage } from './image'
 
 export const gradientNavbar = 'bg-gradient-to-r backdrop-blur from-sky-700 to-cyan-600/[0.15]'
 
-const clasess = 'w-full shadow-xl fixed z-[100] flex flex-col md:flex-row md:items-center md:justify-between py-4 px-8 md:px-12 sm:flex-column'
+const clasess = `
+  w-full shadow-xl fixed z-[100] py-4 px-8
+  flex flex-col
+  md:flex-row md:items-center md:justify-between md:px-12 sm:flex-column
+  rounded-lg
+  backdrop-blur bg-white/[0.8] text-[#00143f] font-semibold
+  fixed
+  top-0
+  md:top-[2%]
+  h-[65px]
+  w-full
+  md:w-[98%]
+  letf-0 md:left-4
+  border-gray-200
+`
 
 export const NavbarUi = () => {
   const { pathname } = useLocation()
 
   return (
-    <nav className={`${clasess} backdrop-blur bg-white text-[#00143f] font-semibold fixed top-0 h-[65px]`}>
-      <figure className='hidden md:flex absolute top-[10px] rounded-full '>
+    <nav className={`${clasess}`}>
+      <figure className='hidden md:flex absolute top-[-15px] rounded-full '>
         <Link to='/'>
-          <LazyLoadImage
+          <AnimatedImage
             alt='logo'
-            className='md:w-[96px] h-auto object-fit rounded-full shadow-2xl'
+            className='md:w-[96px] h-auto object-fit rounded-full shadow-xl'
             src={logo} />
         </Link>
       </figure>
@@ -27,9 +42,7 @@ export const NavbarUi = () => {
         {routes.map((route, k) => (
           <Link
             key={k}
-            className={`hover:opacity-50 transition relative ${clsx({
-              'text-[#3dbab8]': pathname === route.path,
-            })}`}
+            className={`hover:opacity-50 transition relative`}
             to={route.path}>
             {route.name}
 
@@ -37,7 +50,7 @@ export const NavbarUi = () => {
               <motion.div
                 layoutId='underline'
                 animate
-                className='absolute bottom-[-5px] left-0 right-0 height-1 border-b-2 border-[#0FD8D5]'
+                className='absolute bottom-[-5px] left-0 right-0 height-1 border-b-2 border-[#268381]'
               />
             )}
           </Link>
