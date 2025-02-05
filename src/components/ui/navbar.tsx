@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router'
 import { motion } from 'framer-motion'
 import { routes } from '@/utils/constants'
 import { AnimatedImage } from './image'
+import { useEffect } from 'react'
 
 export const gradientNavbar = 'bg-gradient-to-r backdrop-blur from-sky-700 to-cyan-600/[0.15]'
 
@@ -25,6 +26,10 @@ const clasess = `
 
 export const NavbarUi = () => {
   const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [pathname])
 
   return (
     <nav className={`${clasess}`}>
