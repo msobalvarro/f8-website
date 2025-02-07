@@ -5,9 +5,18 @@ import { ServiceItem } from './serviceItem'
 import { ProductsSkeletons } from '../products/cardSkeleton'
 import { useFetch } from '@/hooks/useFetch'
 import { Link } from 'react-router'
+import { useServicesPropierties } from '@/utils/store'
+import { useEffect } from 'react'
 
 export const PreviewServices = () => {
+  const { setServices } = useServicesPropierties()
   const { data: services, isLoading, error } = useFetch<ServiceResponse[]>('/services?pinned=true')
+
+  useEffect(() => {
+    if (services) {
+      setServices(services)
+    }
+  }, [services, setServices])
 
   if (error) return <p>Ha ocurrido un error: {String(error)}</p>
 
@@ -17,7 +26,7 @@ export const PreviewServices = () => {
 
       <article className='grid lg:grid-cols-2 grid-cols-1 gap-10 w-full p-4 md:p-0'>
         {(isLoading) && <ProductsSkeletons />}
-        
+
         {(!isLoading) && services?.map(
           (service, index) => service.pinned && <ServiceItem key={index} service={service} />
         )}

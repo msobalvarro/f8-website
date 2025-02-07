@@ -5,9 +5,18 @@ import { IoIosArrowForward } from 'react-icons/io'
 import { ProductItem } from './productItem'
 import { useFetch } from '@/hooks/useFetch'
 import { Link } from 'react-router'
+import { useEffect } from 'react'
+import { useProductsPropierties } from '@/utils/store'
 
 export const PreviewProducts = () => {
+  const { setProducts } = useProductsPropierties()
   const { data: products, isLoading, error } = useFetch<ProductsPropierties[]>('/products?pinned=true')
+
+  useEffect(() => {
+    if (products) {
+      setProducts(products)
+    }
+  }, [products, setProducts])
 
   if (error) return <p>Ha ocurrido un error: {String(error)}</p>
 

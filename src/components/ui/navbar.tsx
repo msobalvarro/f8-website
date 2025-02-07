@@ -1,9 +1,11 @@
 import logo from '@/assets/logo/logo.png'
 import { Link, useLocation } from 'react-router'
-import { motion } from 'framer-motion'
 import { routes } from '@/utils/constants'
 import { AnimatedImage } from './image'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { useProductsPropierties, useServicesPropierties } from '@/utils/store'
+import { MenuProps } from '@/utils/interfaces'
+import { MenuItem } from './menuItem'
 
 export const gradientNavbar = 'bg-gradient-to-r backdrop-blur from-sky-700 to-cyan-600/[0.15]'
 
@@ -11,8 +13,12 @@ const clasess = `
   w-full shadow-xl fixed z-[100] py-4 px-8
   flex flex-col
   md:flex-row md:items-center md:justify-between md:px-12 sm:flex-column
-  rounded-lg
-  backdrop-blur bg-white/[0.8] text-[#00143f] font-semibold
+  md:rounded-lg
+  md:backdrop-blur 
+  bg-white
+  md:bg-white/[0.8]
+  text-[#00143f]
+  font-semibold
   fixed
   top-0
   gap-4
@@ -22,10 +28,56 @@ const clasess = `
   md:w-[98%]
   letf-0 md:left-4
   border-gray-200
+  z-40
 `
 
 export const NavbarUi = () => {
+  const [menu, setMenu] = useState<MenuProps[]>(routes)
+  const { products } = useProductsPropierties()
+  console.log(products)
+  const { services } = useServicesPropierties()
   const { pathname } = useLocation()
+
+  // console.log(menu)
+
+  useEffect(() => {
+    if (products) {
+      const newMenu = menu.map(i => {
+        if (i.path === '/products') {
+          return {
+            ...i,
+            subMenu: products.map(p => ({
+              name: p.name,
+              path: `/products?id=${p._id}`
+            }))
+          }
+        }
+
+        return i
+      })
+
+      setMenu(newMenu)
+    }
+
+    if (services) {
+      const newMenu = menu.map(i => {
+        if (i.path === '/services') {
+          return {
+            ...i,
+            subMenu: services.map(p => ({
+              name: p.title,
+              path: `/services?id=${p._id}`
+            }))
+          }
+        }
+
+        return i
+      })
+      setMenu(newMenu)
+
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [products, services])
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -43,23 +95,8 @@ export const NavbarUi = () => {
       </figure>
 
       <div className='flex text-sm gap-4 md:gap-6 items-center flex-1 justify-center md:justify-end md:text-lg'>
-        {routes.map((route, k) => (
-          <Link
-            key={k}
-            className={`hover:opacity-50 transition relative`}
-            to={route.path}>
-            {route.name}
-
-            {pathname === route.path && (
-              <motion.div
-                layoutId='underline'
-                animate
-                className='absolute bottom-[-5px] left-0 right-0 height-1 border-b-2 border-[#268381]'
-              />
-            )}
-          </Link>
-        ))}
+        {menu.map((route, k) => <MenuItem data={route} key={k} />)}
       </div>
-    </nav>
+    </nav >
   )
 }

@@ -5,8 +5,11 @@ import { ServiceResponse } from '@/utils/interfaces'
 import { useFetch } from '@/hooks/useFetch'
 import { ProductsSkeletons } from '@/components/products/cardSkeleton'
 import { useState } from 'react'
+import { useParams } from '@/hooks/useParams'
 
 export default function Services() {
+  const params = useParams()
+  const [customSelect] = useState<null | string>(params?.get('id'))
   const { data, isLoading } = useFetch<ServiceResponse[]>('/services')
   const [filter, setFilter] = useState('')
 
@@ -28,7 +31,7 @@ export default function Services() {
 
       <article className='grid lg:grid-cols-2 grid-cols-1 w-full mt-6 md:mt-10 gap-10'>
         {isLoading && <ProductsSkeletons />}
-        {dataFilter?.map((service, index) => (<ServiceItem key={index} service={service} />))}
+        {dataFilter?.map((service, index) => (<ServiceItem activate={customSelect === service._id} key={index} service={service} />))}
       </article>
 
       {dataFilter?.length === 0 && (

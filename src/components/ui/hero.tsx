@@ -2,7 +2,7 @@ import logo from '@/assets/logo/F8.svg'
 
 export const Hero = () => {
   return (
-    <section className={`w-full md:p-12 p-2 min-h-[512px] justify-center flex flex-col gap-10 backdrop-blur bg-[url('./panal.svg')] bg-no-repeat bg-cover`}>
+    <section style={{ background: "url('./panal.svg')" }} className={`w-full md:p-12 p-2 min-h-[512px] md:min-h-[70vh] justify-center flex flex-col gap-10 backdrop-blur bg-no-repeat bg-cover`}>
       <div className='flex flex-col text-center gap-12 items-center'>
         <img className='w-[256px] h-auto fade-in' alt='logo' src={logo} />
 

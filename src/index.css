@@ -36,6 +36,14 @@ body {
   animation: fadeIn 1s ease-in forwards;
 }
 
+.item-menu .sub-menu {
+  display: none;
+}
+
+.item-menu:hover .sub-menu {
+  display: flex;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
