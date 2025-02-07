@@ -13,7 +13,7 @@ import panduit from '@/assets/brands/panduit.svg'
 import secolarmEnforcer from '@/assets/brands/secolarm-enforcer.svg'
 import siemon from '@/assets/brands/siemon.svg'
 import ubiquiti from '@/assets/brands/ubiquiti.svg'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { AnimatedImage } from './image'
 
 const brands = [
   anydesk,
@@ -39,8 +39,8 @@ export const BrandMarquee = ({ addClass }: Props) => {
   return (
     <Marquee className={`p-10 overflow-hidden w-full ${addClass}`}>
       {brands.map((brand, index) => (
-        <LazyLoadImage
-          className='w-32 md:w-48 mx-10'
+        <AnimatedImage
+          className='w-[96px] mx-10'
           key={index}
           src={brand}
           alt={`image ${index}`} />

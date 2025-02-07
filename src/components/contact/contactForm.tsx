@@ -1,4 +1,3 @@
-'use client'
 
 import phoneCodes from '@/utils/phoneCountries.json'
 import { FormEvent, useState } from 'react'
@@ -10,7 +9,7 @@ import { AxiosError } from 'axios'
 import { toast } from 'react-toastify'
 import { axiosInstance } from '@/utils/fetch'
 import { useParams } from '@/hooks/useParams'
-// import { useSearchParams } from 'next/navigation'
+import { v4 } from 'uuid'
 
 const initialState: FormContactState = {
   email: '',
@@ -29,7 +28,7 @@ export const ContactForm = () => {
   const [dataForm, setDataForm] = useState<FormContactState>({
     ...initialState,
     ...(customMessageProduct && {
-      message: `Me gustaria saber el precio del producto ${customMessageProduct}`
+      message: `Me gustaria cotizar del producto ${customMessageProduct}`
     })
   })
 
@@ -53,7 +52,7 @@ export const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={submit} className='flex flex-col gap-4 rounded-xl shadow-xl'>
+    <form onSubmit={submit} className='flex flex-col gap-4'>
       <div className='flex md:flex-row flex-col gap-4'>
         <label className='flex-1'>
           <span className='text-sm'>Nombre Completo *</span>
@@ -112,7 +111,7 @@ export const ContactForm = () => {
               value={phoneCode}
               className={`${inputClassNames}`}>
               {phoneCodes.map(phoneCodeItem => (
-                <option value={phoneCodeItem.dial_code} key={crypto.randomUUID()}>
+                <option value={phoneCodeItem.dial_code} key={v4()}>
                   {phoneCodeItem.emoji} ({phoneCodeItem.dial_code})
                 </option>
               ))}

@@ -2,17 +2,17 @@ import { useStorePropierties } from '@/utils/store'
 import { IoLogoWhatsapp, IoMdMail } from 'react-icons/io'
 import { IoCall } from 'react-icons/io5'
 
-const itemClasess = 'bg-gray-900 hover:bg-slate-700 flex flex-1 flex-col items-center gap-3 bg-gray-800 rounded-lg p-4'
+const itemClasess = 'border border-white/[0.2] hover:bg-slate-700/[0.2] flex flex-1 flex-col items-center gap-3 rounded-lg p-4'
 
 
 export const ContactCard = () => {
   const { propierties: data } = useStorePropierties()
 
   return (
-    <div className='flex flex-row gap-8'>
+    <div className='flex flex-row gap-2 lg:gap-8'>
       <a target='_blank' href={`mailto:${data?.find(e => e.key === 'emailContact')?.value}`} className={itemClasess}>
-        <span className='bg-white rounded-full p-4'>
-          <IoMdMail className='text-3xl text-gray-500' />
+        <span className='rounded-full p-2 md:p-4'>
+          <IoMdMail className='text-3xl text-[#0FD8D5]' />
         </span>
 
         <p className='text-xl hidden md:block'>Escribenos</p>
@@ -21,8 +21,8 @@ export const ContactCard = () => {
 
 
       <a target='_blank' href={`tel:${data?.find(e => e.key === 'phoneContact')?.value}`} className={itemClasess}>
-        <span className='bg-white rounded-full p-4'>
-          <IoCall className='text-3xl text-sky-700' />
+        <span className='rounded-full p-2 md:p-4'>
+          <IoCall className='text-3xl text-sky-400' />
         </span>
 
         <p className='text-xl hidden md:block'>Llámanos</p>
@@ -31,8 +31,8 @@ export const ContactCard = () => {
 
 
       <a target='_blank' href={`wa.me/${data?.find(e => e.key === 'whatsapp')?.value}`} className={itemClasess}>
-        <span className='bg-white rounded-full p-4'>
-          <IoLogoWhatsapp className='text-3xl text-green-700' />
+        <span className='rounded-full p-2 md:p-4'>
+          <IoLogoWhatsapp className='text-3xl text-green-400' />
         </span>
 
         <p className='text-xl hidden md:block'>WhatsApp</p>

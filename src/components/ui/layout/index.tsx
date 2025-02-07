@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-import { clsx } from 'clsx'
 
 interface Props {
   fullWidth?: boolean
@@ -7,11 +6,9 @@ interface Props {
   addClassName?: string
 }
 
-export const UiLayout = ({ children, addClassName, fullWidth }: Props) => {
+export const UiLayout = ({ children, addClassName }: Props) => {
   return (
-    <div className={`justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)] ${addClassName} ${clsx({
-      'p-5 md:p-10': !fullWidth
-    })}`}>
+    <div className={`justify-items-center min-h-screen p-4 lg:p-12 font-[family-name:var(--font-geist-sans)] ${addClassName}`}>
       {children}
     </div>
   )

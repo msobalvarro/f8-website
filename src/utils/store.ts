@@ -1,12 +1,18 @@
 import { create } from 'zustand'
-import { PreferencesPropierties } from './interfaces'
+import { PreferencePropsType, PreferencesPropierties, ProductsPropierties, ProductsPropsType, ServiceResponse, ServicesPropsType } from './interfaces'
 
-type Props = {
-  propierties: PreferencesPropierties[]
-  setPropierties: (props: PreferencesPropierties[]) => void
-}
 
-export const useStorePropierties = create<Props>((set) => ({
+export const useStorePropierties = create<PreferencePropsType>((set) => ({
   propierties: [],
-  setPropierties: (props: PreferencesPropierties[]) => set(() => ({ propierties: props })),
+  setPropierties: (propierties: PreferencesPropierties[]) => set(() => ({ propierties })),
+}))
+
+export const useProductsPropierties = create<ProductsPropsType>((set) => ({
+  products: [],
+  setProducts: (products: ProductsPropierties[]) => set(() => ({ products })),
+}))
+
+export const useServicesPropierties = create<ServicesPropsType>((set) => ({
+  services: [],
+  setServices: (services: ServiceResponse[]) => set(() => ({ services })),
 }))
