@@ -16,7 +16,7 @@ const clasess = `
   md:rounded-lg
   md:backdrop-blur 
   bg-white
-  md:bg-white/[0.8]
+  md:bg-white
   text-[#00143f]
   font-semibold
   fixed

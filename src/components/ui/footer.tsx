@@ -70,7 +70,7 @@ export const Footer = () => {
             <FaWhatsapp />
           </a>
         )}
-        
+
         {socialMediaLinks.whatsapp2 && (
           <a
             href={`https://wa.me/${socialMediaLinks.whatsapp2}`}
@@ -82,9 +82,14 @@ export const Footer = () => {
         )}
       </div>
 
-      <p className='text-center text-gray-300 text-sm mt-4'>
-        F8 Technologies &copy; {new Date().getFullYear()} - Todos los derechos reservados
-      </p>
+      <div className='flex items-center justify-center flex-col'>
+        <p className='text-center text-gray-300 text-sm mt-4'>
+          F8Technologies &copy; {new Date().getFullYear()} - Todos los derechos reservados</p>
+
+        <p className='text-center text-gray-300 text-sm mt-4'>
+          Hecho en Managua, Nicaragua ❤️
+        </p>
+      </div>
     </footer>
   )
 }
