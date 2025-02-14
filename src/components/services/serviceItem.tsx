@@ -19,12 +19,12 @@ export const ServiceItem = ({ service, activate }: Props) => {
       'animate__animated animate__fadeInDown': !activate
     })}`}>
       <div className='flex flex-col gap-2 flex-1 z-20'>
-        <div className='flex items-center justify-end gap-2 text-gray-500'>
+        {/* <div className='flex items-center justify-end gap-2 text-gray-500'>
           <FaCalendarCheck />
           <p>
             {dayjs(service.updatedAt || service.createdAt).format('DD MMM YYYY')}
           </p>
-        </div>
+        </div> */}
         <h3 className='text-2xl font-bold lg:text-4xl'>{service.title}</h3>
         <p className='text-[#00143F]'>{service.description}</p>
       </div>

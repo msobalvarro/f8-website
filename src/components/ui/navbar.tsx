@@ -12,8 +12,10 @@ export const gradientNavbar = 'bg-gradient-to-r backdrop-blur from-sky-700 to-cy
 const clasess = `
   w-full shadow-xl fixed z-[100] py-4 px-8
   flex flex-col
-  md:flex-row md:items-center md:justify-between md:px-12 sm:flex-column
-  md:rounded-lg
+  md:flex-row md:items-center
+  md:justify-between
+  md:px-2
+  sm:flex-column
   md:backdrop-blur 
   bg-white
   md:bg-white
@@ -22,11 +24,8 @@ const clasess = `
   fixed
   top-0
   gap-4
-  md:top-[2%]
   h-[65px]
   w-full
-  md:w-[98%]
-  letf-0 md:left-4
   border-gray-200
   z-40
 `
@@ -34,7 +33,6 @@ const clasess = `
 export const NavbarUi = () => {
   const [menu, setMenu] = useState<MenuProps[]>(routes)
   const { products } = useProductsPropierties()
-  console.log(products)
   const { services } = useServicesPropierties()
   const { pathname } = useLocation()
 

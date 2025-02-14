@@ -9,7 +9,7 @@ export default function Contact() {
     <UiLayout addClassName='p-10'>
 
       <UiTitle
-        title='Envía un Mensaje a F8'
+        title='Contáctanos'
         description='¿Tienes preguntas o necesitas asistencia? Estamos aquí para ayudarte. Puedes ponerte en contacto con nosotros a través de nuestro formulario en línea, enviándonos un mensaje por WhatsApp o escribiéndonos por correo electrónico.'
       />
 

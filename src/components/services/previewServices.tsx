@@ -21,8 +21,9 @@ export const PreviewServices = () => {
   if (error) return <p>Ha ocurrido un error: {String(error)}</p>
 
   return (
-    <div className='flex flex-1 flex-col my-10 gap-10 items-center p-1 md:p-12 sm:p-2 w-full'>
-      <h2 className='text-4xl md:self-start self-center tag-line'>Servicios de F8</h2>
+    <div className='flex flex-1 flex-col my-10 gap-10 items-end p-1 md:p-12 sm:p-2 w-full text-cen'>
+      <h2 className='text-4xl md:self-center tag-line justify-self-center'>Nuestros Servicios</h2>
+      
 
       <article className='grid lg:grid-cols-2 grid-cols-1 gap-10 w-full p-4 md:p-0'>
         {(isLoading) && <ProductsSkeletons />}
