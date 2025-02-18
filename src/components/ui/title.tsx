@@ -1,26 +1,35 @@
-import logo from '@/assets/logo/logo.png'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+// import logo from '@/assets/logo/logo.png'
+// import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { InputSearch } from './inputSearch'
+import clsx from 'clsx'
 
 interface Props {
   title: string
   description?: string
+  showSearch?: boolean
+  textFilter?: string
+  setFilter?: (value: string) => void
 }
 
-export const UiTitle = ({ title, description }: Props) => (
-  <header className='flex flex-col md:flex-row justify-between rounded-xl items-center md:backdrop-blur items-top gap-4 p-10 md:bg-gray-800/[0.2] md:border-2 md:border-slate-600 w-full'>
-    <LazyLoadImage
-      src={logo}
-      className='w-64 fade-in'
-      alt='logo' />
+export const UiTitle = ({ title, description, showSearch, textFilter, setFilter }: Props) => (
+  <header className='flex flex-col text-center md:flex-row justify-between rounded-xl items-center items-top gap-4 p-10 w-full'>
 
-    <view className='flex flex-col gap-4 items-center md:items-end fade-in'>
-      <h1 className='text-4xl md:text-right lg:text-6xl text-center md:text-right'>{title}</h1>
+    <div className='flex-1 flex flex-col gap-6 fade-in animate__animated animate__fadeInDown'>
+      <div className={`flex flex-1 flex-col md:flex-row space-y-6 items-center ${clsx({ 'justify-between': showSearch, 'justify-center': !showSearch })}`}>
+        <h1 className='text-4xl lg:text-6xl text-white'>{title}</h1>
+        {(showSearch) && (
+          <InputSearch value={String(textFilter)} onChangeText={e => setFilter?.(e)} />
+        )}
+      </div>
+
+      <div className='border-b-[#0FD8D5] border-b' />
+
       {description && (
-        <p className='text-gray-400 break-normal text-center md:text-right self-center md:self-right lg:self-end lg:w-[70%]'>
+        <p className='text-white/[0.8] break-normal text-center self-center text-lg'>
           {description}
         </p>
       )}
-    </view>
+    </div>
 
   </header>
 )

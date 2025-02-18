@@ -2,22 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   background-image: url('/background-layer.svg');
   background-repeat: no-repeat;
-  background-color: #010a1f;
-  background-position-x: 300%;
-  background-position-y: 100%;
+  background-color: #00143F;
+  /* background-position-x: 300%;
+  background-position-y: 100%; */
   background-size: cover;
   background-attachment: fixed;
-  animation: gradientAnimation 30s linear infinite;
+  /* animation: gradientAnimation 30s linear infinite; */
+  font-family: "Montserrat", serif;
   color: #ffffff;
+}
+
+.tag-line {
+  position: relative;
+}
+
+.tag-line::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #0FD8D5;
+  margin-top: 8px;
+  
 }
 
 .fade-in {
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
+}
+
+.item-menu .sub-menu {
+  display: none;
+}
+
+.item-menu:hover .sub-menu {
+  display: flex;
 }
 
 @keyframes fadeIn {

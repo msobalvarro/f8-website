@@ -2,7 +2,6 @@
 import phoneCodes from '@/utils/phoneCountries.json'
 import { FormEvent, useState } from 'react'
 import { inputClassNames, InputField } from '@/components/ui/inputField'
-import { UiButton } from '../ui/button'
 import { FormContactState } from '@/utils/interfaces'
 import { useValidation } from '@/hooks/useValidation'
 import { AxiosError } from 'axios'
@@ -52,7 +51,7 @@ export const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={submit} className='flex flex-col gap-4 rounded-xl shadow-xl'>
+    <form onSubmit={submit} className='flex flex-col gap-4'>
       <div className='flex md:flex-row flex-col gap-4'>
         <label className='flex-1'>
           <span className='text-sm'>Nombre Completo *</span>
@@ -71,7 +70,7 @@ export const ContactForm = () => {
         </label>
 
         <label className='flex-1'>
-          <span className='text-sm'>Nombre Empresa</span>
+          <span className='text-sm'>Nombre Empresa *</span>
           <InputField
             className='w-full'
             inputProps={{
@@ -144,9 +143,11 @@ export const ContactForm = () => {
           className={`w-full ${inputClassNames}`} />
       </label>
 
-      <UiButton disabled={loading} type='primary'>
+      <button
+        className={`transition-all  text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2': type === 'secondary`}>
         {loading ? 'Cargando...' : 'Enviar Mensaje'}
-      </UiButton>
+      </button>
+
     </form>
   )
 }

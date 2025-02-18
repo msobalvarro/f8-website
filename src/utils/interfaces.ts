@@ -7,6 +7,7 @@ export interface FormContactState {
 }
 
 export interface ProductsPropierties {
+  _id: string
   name: string
   description: string
   archived: boolean
@@ -74,6 +75,7 @@ export interface ServicesPropierties {
   archived?: boolean
   pinned?: boolean
   createdAt?: string
+  updatedAt?: string
 }
 
 export interface NewAndUpdateServiceProps extends ServicesPropierties { 
@@ -84,3 +86,23 @@ export interface ServiceResponse extends ServicesPropierties {
   _id: string
 }
 
+export type PreferencePropsType = {
+  propierties: PreferencesPropierties[]
+  setPropierties: (props: PreferencesPropierties[]) => void
+}
+
+export type ProductsPropsType = {
+  products: ProductsPropierties[]
+  setProducts: (props: ProductsPropierties[]) => void
+}
+
+export type ServicesPropsType = {
+  services: ServiceResponse[]
+  setServices: (props: ServiceResponse[]) => void
+}
+
+export type MenuProps = {
+  path: string
+  name: string
+  subMenu?: MenuProps[]
+}

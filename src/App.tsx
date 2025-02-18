@@ -1,3 +1,4 @@
+import 'animate.css'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { Footer } from './components/ui/footer'
 import { NavbarUi } from './components/ui/navbar'
@@ -5,13 +6,14 @@ import { useFetch } from './hooks/useFetch'
 import { PreferencesPropierties } from './utils/interfaces'
 import { ReactElement, useEffect } from 'react'
 import { useStorePropierties } from './utils/store'
+import { AnimatePresence, motion } from 'framer-motion'
+import { pageVariants } from './utils/constants'
+import { ToastContainer } from 'react-toastify'
 import Home from './app/home'
 import Products from './app/products'
 import Contact from './app/contact'
 import Services from './app/service'
 import About from './app/about'
-import { AnimatePresence, motion } from 'framer-motion'
-import { pageVariants } from './utils/constants'
 
 const MotionComponent = ({ children }: { children: ReactElement }) => (
   <motion.div
@@ -37,7 +39,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <main>
+      <main className='pt-[64px]'>
         <NavbarUi />
         <AnimatePresence mode='sync'>
           <Routes>
@@ -70,6 +72,8 @@ function App() {
         </AnimatePresence>
         <Footer />
       </main>
+
+      <ToastContainer />
     </BrowserRouter>
 
   )
