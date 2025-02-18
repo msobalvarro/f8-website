@@ -9,7 +9,7 @@ interface Props {
   className?: string
 }
 
-export const inputClassNames = 'outline-none bg-white text-black border text-gray-900 text-sm rounded-lg focus:ring-[#0FD8D5] focus:border-[#0FD8D5] block p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500'
+export const inputClassNames = 'outline-none bg-white border text-sm rounded-lg focus:ring-[#0FD8D5] focus:border-[#0FD8D5] block p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 text-black'
 
 
 export const InputField = (props: Props) => {
