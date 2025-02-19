@@ -83,7 +83,7 @@ export const NavbarUi = () => {
 
   return (
     <nav className={`${clasess}`}>
-      <figure className='hidden md:flex absolute top-[-15px] rounded-full '>
+      <figure className='hidden md:flex absolute top-1 rounded-full '>
         <Link to='/'>
           <AnimatedImage
             alt='logo'

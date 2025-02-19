@@ -7,7 +7,6 @@ interface Props {
   product: ProductsPropierties
 }
 
-
 export const ProductItem = ({ product }: Props) => {
   return (
     <div className='fade-in transition-all rounded-lg overflow-hidden shadow bg-white text-[#00143F]'>

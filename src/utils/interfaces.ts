@@ -68,9 +68,9 @@ export interface ArchiveMessageProp {
   _id: string
 }
 
-export interface ServicesPropierties { 
+export interface ServicesPropierties {
   title: string
-  description: string  
+  description: string
   images: string[]
   archived?: boolean
   pinned?: boolean
@@ -78,11 +78,11 @@ export interface ServicesPropierties {
   updatedAt?: string
 }
 
-export interface NewAndUpdateServiceProps extends ServicesPropierties { 
+export interface NewAndUpdateServiceProps extends ServicesPropierties {
   id: string
 }
 
-export interface ServiceResponse extends ServicesPropierties { 
+export interface ServiceResponse extends ServicesPropierties {
   _id: string
 }
 
@@ -105,4 +105,22 @@ export type MenuProps = {
   path: string
   name: string
   subMenu?: MenuProps[]
+}
+
+export type JobsResponse = {
+  _id: string
+  title: string
+  location: string
+  description: string
+  image?: string | null
+  tags: string[]
+  active: boolean
+  createdAt: string
+  updatedAt: string
+}
+
+export type JobApplicationParams = {
+  fullName?: string
+  email?: string
+  phoneNumber?: string
 }

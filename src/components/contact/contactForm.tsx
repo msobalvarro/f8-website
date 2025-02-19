@@ -108,7 +108,7 @@ export const ContactForm = () => {
             <select
               onChange={({ currentTarget }) => setPhoneCode(currentTarget.value)}
               value={phoneCode}
-              className={`${inputClassNames}`}>
+              className={inputClassNames}>
               {phoneCodes.map(phoneCodeItem => (
                 <option value={phoneCodeItem.dial_code} key={v4()}>
                   {phoneCodeItem.emoji} ({phoneCodeItem.dial_code})

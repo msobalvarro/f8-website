@@ -6,11 +6,8 @@ body {
   background-image: url('/background-layer.svg');
   background-repeat: no-repeat;
   background-color: #00143F;
-  /* background-position-x: 300%;
-  background-position-y: 100%; */
   background-size: cover;
   background-attachment: fixed;
-  /* animation: gradientAnimation 30s linear infinite; */
   font-family: "Montserrat", serif;
   color: #ffffff;
 }

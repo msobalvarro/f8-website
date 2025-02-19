@@ -29,8 +29,8 @@ export default function Services() {
         setFilter={setFilter}
       />
 
+      {isLoading && <ProductsSkeletons />}
       <article className='grid lg:grid-cols-2 grid-cols-1 w-full mt-6 md:mt-10 gap-10'>
-        {isLoading && <ProductsSkeletons />}
         {dataFilter?.map((service, index) => (<ServiceItem activate={customSelect === service._id} key={index} service={service} />))}
       </article>
 
