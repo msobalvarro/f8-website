@@ -42,7 +42,7 @@ function App() {
         <Footer />
       </main>
 
-      <ToastContainer />
+      <ToastContainer position='bottom-right' />
     </BrowserRouter>
 
   )

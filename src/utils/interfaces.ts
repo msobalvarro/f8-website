@@ -120,7 +120,7 @@ export type JobsResponse = {
 }
 
 export type JobApplicationParams = {
-  fullName?: string
-  email?: string
-  phoneNumber?: string
+  fullName: string
+  email: string
+  phoneNumber: string
 }
