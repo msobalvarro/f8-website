@@ -56,6 +56,10 @@ export const ModalApplication = ({ job, onClose }: Props) => {
         throw new Error('Por favor selecciona un archivo PDF')
       }
 
+      if (file.size > 5 * 1024 * 1024) {
+        throw new Error('El archivo no debe ser mayor a 5MB')
+      }
+
       if (!dataForm.fullName || dataForm.fullName.split(' ').length < 2) {
         throw new Error('Por favor ingrese su nombre y apellido')
       }
@@ -63,7 +67,9 @@ export const ModalApplication = ({ job, onClose }: Props) => {
       const imageUploaded = await UploadFileService(file)
 
       await axiosInstance.post<{ _id: string }>('/jobs/apply', {
-        ...dataForm,
+        fullName: dataForm.fullName,
+        email: dataForm.email,
+        phoneNumber: `${phoneCode}${dataForm.phoneNumber}`,
         jobId: job._id,
         cv: imageUploaded.fileName
       })
@@ -72,7 +78,7 @@ export const ModalApplication = ({ job, onClose }: Props) => {
 
       toast.success('Aplicación enviada correctamente')
     } catch (error) {
-      if (error instanceof AxiosError) { 
+      if (error instanceof AxiosError) {
         toast.error(error.response?.data, {
           position: 'bottom-center'
         })
