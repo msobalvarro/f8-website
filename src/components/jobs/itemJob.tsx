@@ -23,27 +23,27 @@ export const ItemJob = ({ job }: { job: JobsResponse }) => {
         <PhotoProvider>
           <PhotoView src={`${imageOrigin}/${job.image}`}>
             <AnimatedImage
-              className='w-full object-cover aspect-[1]'
+              className='w-full object-cover max-h-[512px] md:aspect-[1] rounded'
               src={`${imageOrigin}/${job.image}`}
               alt='product-image' />
           </PhotoView>
         </PhotoProvider>
       )}
 
-      <div className='flex justify-between'>
-        <h2 className='text-xl font-semibold'>{job.title}</h2>
-        <p className='text-white flex items-center gap-2'><IoLocationSharp /> {job?.location || 'Managua'}</p>
-
+      <div className='flex justify-between py-4'>
+        <h2 className='text-xl'>{job.title}</h2>
+        <p className='text-white flex items-center gap-2 font-bold'><IoLocationSharp /> {job?.location || 'Managua'}</p>
       </div>
+
       <div className='text-slate-200 space-y-4'>
         <p>{job.description}</p>
-
-        <hr />
-
-        <TagsPreview tags={job.tags} />
       </div>
 
-      <div className='flex items-center gap-4 '>
+      <TagsPreview tags={job.tags} />
+
+      <hr />
+
+      <div className='flex items-center gap-4 justify-center'>
         <BsCalendarCheckFill />
 
         <p>
@@ -53,7 +53,12 @@ export const ItemJob = ({ job }: { job: JobsResponse }) => {
         <p className='text-gray-500'>({dayjs(job.createdAt).fromNow()})</p>
       </div>
 
-      <Button className='self-end' color='primary' onClick={() => setApply(true)}>Aplicar</Button>
+
+      <Button
+        className='self-end'
+        variant='contained'
+        color='primary'
+        onClick={() => setApply(true)}>Aplicar</Button>
 
       {apply && createPortal(
         <ModalApplication job={job} onClose={() => setApply(false)} />,
