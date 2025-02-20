@@ -31,6 +31,14 @@ export default function Jobs() {
       <article className='grid lg:grid-cols-2 grid-cols-1 w-full mt-6 md:mt-10 gap-10'>
         {dataFilter?.map((job, k) => <ItemJob job={job} key={k} />)}
       </article>
+
+      {dataFilter?.length === 0 && jobs?.length === 0 && (
+        <p className='text-2xl text-gray-500 text-center'>No hay empleos disponibles</p>
+      )}
+      
+      {dataFilter?.length === 0 && (jobs?.length ?? 0) > 0 && (
+        <p className='text-2xl text-gray-500 text-center'>No se encontraron resultados</p>
+      )}
     </UiLayout>
   )
 }
